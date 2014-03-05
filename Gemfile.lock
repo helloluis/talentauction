@@ -78,7 +78,6 @@ GEM
       sass (>= 3.2.0)
       thor
     builder (3.1.4)
-    cancan (1.6.10)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -179,6 +178,8 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
+    pundit (0.2.2)
+      activesupport (>= 3.0.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -260,7 +261,6 @@ DEPENDENCIES
   annotate
   aws-ses
   bootstrap-sass
-  cancan
   carrierwave
   compass-rails
   countries
@@ -275,6 +275,7 @@ DEPENDENCIES
   mini_magick
   pg
   pry
+  pundit
   rails (= 4.0.3)
   rails_12factor
   sass-rails (~> 4.0.0)

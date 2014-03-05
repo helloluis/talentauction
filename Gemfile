@@ -43,7 +43,7 @@ gem 'kaminari'
 gem 'pry'
 
 gem 'acts-as-taggable-on'
-gem 'cancan'
+gem 'pundit'
 gem 'draper'
 
 group :development do
