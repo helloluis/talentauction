@@ -47,6 +47,11 @@ gem 'pry'
 
 gem 'acts-as-taggable-on'
 gem 'cancan'
+gem 'draper'
+
+group :development do
+  gem 'annotate'
+end
 
 group :production do
   gem 'rails_12factor'
