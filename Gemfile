@@ -18,7 +18,8 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem "pg"
-
+gem "slim"
+gem "hashie"
 gem "carrierwave"
 gem "mini_magick"
 gem "fog"
