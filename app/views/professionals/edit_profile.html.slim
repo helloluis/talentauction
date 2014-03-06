@@ -1,0 +1,52 @@
+ul.something
+  li.active
+    = t(:profile)
+  li
+    = t(:job_requirements)
+  li
+    = t(:start_auction)
+
+  p
+    = link_to "Linkedin", '#'
+  p
+    = link_to t(:remove_connection), '#'
+
+#basic_info
+  p
+    #{current_professional.profile.firstname} #{current_professional.profile.surname}
+    #{current_professional.profile.linkedin_url}
+
+  h4= t(:location)
+  p #{current_professional.profile.location}
+
+h4= t(:education)
+ol#professional_education
+  - current_professional.profile.educations.each do |education|
+    li.education-item
+      = education
+
+h4= t(:experience)
+ol#professional_experiences
+  - current_professional.profile.experiences.each do |experience|
+    li.profession-item
+      p
+        #{experience[:position]}
+        #{experience[:description]}
+        #{experience[:duration]}
+
+h4= t(:skills_and_expertise)
+ul#professional_skills
+  - current_professional.profile.skills.each do |skill|
+    li.skill-tag= skill
+
+p
+  = link_to t(:proceed_to_next_step), '#'
+
+
+p
+  i
+    | additionally, you may also sign in with these other services so we can add more details to your profile.
+
+p= link_to t(:sign_in_with_github), '#' 
+p= link_to t(:sign_in_with_dribbble), '#'
+p= link_to t(:sign_in_with_behance), '#'

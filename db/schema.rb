@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140306042220) do
+ActiveRecord::Schema.define(version: 20140306075158) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "professional_profiles", force: true do |t|
+    t.string  "firstname"
+    t.string  "surname"
+    t.integer "user_id"
+  end
+
+  add_index "professional_profiles", ["user_id"], name: "index_professional_profiles_on_user_id", using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"

@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if resource.is_a? Professional
-      edit_professional_registration_path
+      professional_edit_profile_path(resource)
     elsif resource.is_a? Recruiter
       edit_recruiter_registration_path
     end
