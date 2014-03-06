@@ -1,4 +1,9 @@
 Talentauction::Application.routes.draw do
+  # Devise routes
+  devise_for :users
+  devise_for :professionals
+  devise_for :recruiters
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

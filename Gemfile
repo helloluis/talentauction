@@ -42,6 +42,7 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 
 gem 'kaminari'
 gem 'pry'
+gem 'pry-remote'
 
 gem 'acts-as-taggable-on'
 gem 'pundit'

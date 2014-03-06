@@ -1,0 +1,3 @@
+class Professional < User
+
+end
