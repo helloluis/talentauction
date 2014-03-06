@@ -6,13 +6,13 @@ doctype html
 head
 
   title = page_title
-  
+
   = stylesheet_link_tag "application", media: "all"
-  
+
   = javascript_include_tag "application"
 
   = yield :page_styles
-  
+
   = csrf_meta_tags
 
 body
@@ -20,7 +20,7 @@ body
   = render :partial => "shared/header"
 
   = yield
-  
+
   = render :partial => "shared/footer"
 
   = render :partial => "shared/analytics"
