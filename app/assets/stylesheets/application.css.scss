@@ -1,0 +1,10 @@
+@import "compass";
+
+//shared stylesheets
+@import "shared/bootstrap";
+@import "shared/mixins_variables";
+@import "shared/general";
+@import "shared/buttons";
+
+//page-related stylesheets
+@import "pages/landing";
