@@ -23,3 +23,6 @@ en:
   hello: "Hello world"
   professional_signup_text: "I want a great job"
   recruiter_signup_text: "I want to hire great talent"
+
+  benefits_professional: "Sign up to find your dream job"
+  benefits_recruiter: "Sign up to find top-notch talent"
