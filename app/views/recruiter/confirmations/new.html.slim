@@ -1,11 +1,24 @@
-h2
-  | Resend confirmation instructions
-= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
-  = devise_error_messages!
-  div
-    = f.label :email
-    br
-    = f.email_field :email, :autofocus => true
-  div
-    = f.submit "Resend confirmation instructions"
-= render "recruiter/shared/links"
+section class='resend-confirmation container col-md-12'  
+    div class='container col-md-4 col-sm-6'
+        h2 class='text-center' = t(:resend_confirmation_instructions)
+        = form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post, class:'form-horizontal' }) do |f|
+          = devise_error_messages!
+          div class='form-group'
+            = f.label :email,  :class => 'control-label col-md-2' 
+            div class='col-md-10'
+              = f.email_field :email, :autofocus => true, :class =>  'form-control' 
+
+          div= f.submit "Resend confirmation instructions", :class => 'btn btn-default col-md-offset-2'
+
+
+        p
+          a href='javascript: history.go(-1)' 
+            span class='glyphicon glyphicon-chevron-left'
+            | &nbsp; 
+            = t(:go_back)
+
+
+        = render "devise/shared/links"
+
+
+

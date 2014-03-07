@@ -1,19 +1,18 @@
-h2
-  = t(:recruiter_signup_title)
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-  = devise_error_messages!
-  div
-    = f.label :email
-    br
-    = f.email_field :email, :autofocus => true
-  div
-    = f.label :password
-    br
-    = f.password_field :password
-  div
-    = f.label :password_confirmation
-    br
-    = f.password_field :password_confirmation
-  div
-    = f.submit "Sign up"
-= render "recruiter/shared/links"
+div class='container sign-up-page'
+
+  section class='sign-in col-md-4 col-xs-12 pull-right'
+    
+    = render "devise/shared/links"         
+
+  section class='sign-up col-md-8 col-xs-12'
+    
+    = render "shared/benefits"
+
+    div class='col-md-8 row'
+
+      h2 = t(:create_an_account)
+
+      = render :partial => "devise/registrations/form"
+
+
+
