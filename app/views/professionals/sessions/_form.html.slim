@@ -1,0 +1,21 @@
+= form_for(resource, :as => resource_name, :url => session_path(resource_name),  :html => { :role => "form", :id => "existing_user", :class => "form-horizontal existing-user"} ) do |f|
+  
+  = devise_error_messages!
+
+  div class='form-group'
+    = f.label :email, :class => "control-label col-md-3"
+    div class='col-md-9'
+      = f.email_field :email, :autofocus => true, class: 'form-control'
+  div class="form-group #{'has-error' if flash[:alert]}"
+    = f.label :password, :class => "control-label  col-md-3"
+    div class='col-md-9'
+      = f.password_field :password, class: 'form-control'
+      - if devise_mapping.rememberable?
+        div class='checkbox'
+          = f.check_box :remember_me, type: 'checkbox'
+          = f.label :remember_me
+        = f.submit "Sign in", class: 'btn btn-default'
+        - unless controller_name == 'sessions'
+          = link_to "Cancel", "#", class: "cancel close"
+
+= render "devise/shared/links"

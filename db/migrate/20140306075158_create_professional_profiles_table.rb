@@ -1,6 +1,7 @@
 class CreateProfessionalProfilesTable < ActiveRecord::Migration
   def change
     create_table :professional_profiles do |t|
+      t.integer :user_id
       t.string :firstname
       t.string :surname
       t.references :professional

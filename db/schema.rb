@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 20140306075158) do
   create_table "professional_profiles", force: true do |t|
     t.string  "firstname"
     t.string  "surname"
-    t.integer "user_id"
+    t.integer "professional_id"
   end
 
-  add_index "professional_profiles", ["user_id"], name: "index_professional_profiles_on_user_id", using: :btree
+  add_index "professional_profiles", ["professional_id"], name: "index_professional_profiles_on_professional_id", using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"

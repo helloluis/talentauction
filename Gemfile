@@ -32,9 +32,8 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'aws-ses', require: 'aws/ses'
 
 gem 'activerecord-session_store'
-# gem 'puma' --
 
-gem 'exceptional'
+gem 'letter_opener'
 
 gem 'devise'
 

@@ -58,6 +58,7 @@ GEM
       tzinfo (~> 0.3.37)
     acts-as-taggable-on (3.0.1)
       rails (>= 3, < 5)
+    addressable (2.3.5)
     annotate (2.5.0)
       rake
     arbre (1.0.1)
@@ -117,8 +118,6 @@ GEM
       request_store (~> 1.0.3)
     erubis (2.7.0)
     eventmachine (1.0.3)
-    exceptional (2.0.33)
-      rack
     excon (0.31.0)
     execjs (2.0.2)
     fog (1.20.0)
@@ -155,6 +154,10 @@ GEM
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    launchy (2.4.2)
+      addressable (~> 2.3)
+    letter_opener (1.2.0)
+      launchy (~> 2.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -275,12 +278,12 @@ DEPENDENCIES
   country_select
   devise
   draper
-  exceptional
   fog
   hashie
   jbuilder (~> 1.2)
   jquery-rails
   kaminari
+  letter_opener
   mini_magick
   pg
   pry
