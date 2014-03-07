@@ -1,8 +1,43 @@
-section id='landing' class='container'
-  
-  h1 = App.name
+section id='landing' class="clearfix"
 
-  h2 = t(:hello_world)
+  / #banner
+  div class="jumbotron hero" id="banner"
+    div class="container"
+      div class="col-md-6" id="professionals-intro"
+        h2 Job-seekers
+        p Find the perfect job by filling out our application form and telling us what your ideal job looks like.
+        p
+          = link_to t(:professional_signup_text), new_professional_registration_path, :class => "btn btn-lg"
 
-  p = link_to t(:professional_signup_text), new_professional_registration_path
-  p = link_to t(:recruiter_signup_text), new_recruiter_registration_path
+      div class="col-md-6" id="recruiters-intro"
+        h2 Recruiters
+        p Sign up as a company and search our directory of high-end talent.
+        p
+          = link_to t(:recruiter_signup_text), new_recruiter_registration_path, :class => "btn btn-lg"
+  / #banner
+
+  / #how-it-works
+  div class="container" id="how-it-works"
+
+    div class="intro"
+      h2 class="text-center" How does this work?
+
+      p 
+        strong Talent Market
+        |  is a next-generation job marketplace for high-end talent looking to be matched with the best job offers from the coolest companies. As a job-seeker, you fill out our application form and tell us about your skills and describe your ideal job. Recruiters with requirements that match your skills and job criteria will see you when they do a search, and leave job offers on your page. It costs nothing to try, and we only bill the recruiter if the job offer is accepted by both parties.
+
+    / #sample-templates
+    div class="row" id="sample-templates"
+
+      div class="sample-talent-profile col-md-6"
+        h2 Sample Talent Profile
+        p Web Product Designer with 13 years of experience conceptualizing, designing, and building awesome web applications in PHP, Ruby, and Javascript.
+
+      div class="sample-job-offer col-md-6"
+        h2 Sample Job Offer
+        p
+          strong $80,000/year
+          br
+          | Young funded startup looking for someone to lead our SF-based product team.
+    / #sample-templates
+  / #how-it-works

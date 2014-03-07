@@ -1,0 +1,23 @@
+html, body {
+  font-size:$main-font-size*1.3;
+
+  @media (min-width:$screen-md-min) {
+    font-size:$main-font-size;
+  } //@media (min-width:$screen-md-min)
+} //body
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom:rem-calc(20px);
+}
+
+p {
+  font-size:rem-calc(16px);
+}
+
+#colophon {
+  margin-top:80px;
+  background:#DDD;
+  padding:20px 0;
+  font-size:rem-calc(12px);
+
+} //#colophon
