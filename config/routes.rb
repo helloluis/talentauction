@@ -8,6 +8,10 @@ Talentauction::Application.routes.draw do
     get 'edit_profile'
   end
 
+  resources :recruiters do
+    get 'edit_profile'
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,18 +1,18 @@
 div class='container sign-up-page'
 
   section class='sign-in col-md-4 col-xs-12 pull-right'
-    
-    = render "recruiter/shared/links"         
+
+    = render "recruiters/shared/links"
 
   section class='sign-up col-md-8 col-xs-12'
-    
-    = render "shared/benefits"
+
+    = render "recruiters/shared/benefits"
 
     div class='col-md-8 row'
 
       h2 = t(:create_an_account)
 
-      = render :partial => "recruiter/registrations/form"
+      = render :partial => "recruiters/registrations/form"
 
 
 

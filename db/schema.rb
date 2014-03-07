@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140306075158) do
+ActiveRecord::Schema.define(version: 20140307080426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,19 @@ ActiveRecord::Schema.define(version: 20140306075158) do
   end
 
   add_index "professional_profiles", ["professional_id"], name: "index_professional_profiles_on_professional_id", using: :btree
+
+  create_table "recruiter_profiles", force: true do |t|
+    t.integer "recruiter_id"
+    t.string  "company_name"
+    t.string  "company_size"
+    t.string  "industry"
+    t.string  "country"
+    t.string  "city"
+    t.text    "summary"
+    t.text    "additional_info"
+  end
+
+  add_index "recruiter_profiles", ["recruiter_id"], name: "index_recruiter_profiles_on_recruiter_id", using: :btree
 
   create_table "taggings", force: true do |t|
     t.integer  "tag_id"

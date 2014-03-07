@@ -1,4 +1,8 @@
 class Recruiter < User
+  has_one :profile, class_name: 'RecruiterProfile', autosave: true
+  before_create :build_profile
+
+  accepts_nested_attributes_for :profile
 end
 
 # == Schema Information
