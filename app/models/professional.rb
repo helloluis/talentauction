@@ -1,9 +1,9 @@
 class Professional < User
   has_one :profile, class_name: 'ProfessionalProfile', autosave: true
-  has_one :professional_requirement, autosave: true
-  before_create :build_profile, :build_professional
+  has_one :requirement, class_name: 'ProfessionalRequirement', autosave: true
+  before_create :build_profile, :build_requirement
 
-  accepts_nested_attributes_for :profile
+  accepts_nested_attributes_for :profile, :requirement
 end
 
 # == Schema Information

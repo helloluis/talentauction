@@ -1,5 +1,5 @@
 class ProfessionalRequirement < ActiveRecord::Base
-  belongs_to :professional, inverse_of: :professional_requirement
+  # belongs_to :professional, inverse_of: :professional_requirement
 end
 
 # == Schema Information
@@ -7,6 +7,7 @@ end
 # Table name: professional_requirements
 #
 #  id                    :integer          not null, primary key
+#  professional_id       :integer
 #  minimum_annual_salary :float
 #  salary_currency       :string(255)
 #  summary               :text

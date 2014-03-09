@@ -1,5 +1,5 @@
 class ProfessionalProfile < ActiveRecord::Base
-  belongs_to :professional, inverse_of: :professional_profile
+  belongs_to :professional, inverse_of: :profile
 
   def firstname
     'Leeroy'

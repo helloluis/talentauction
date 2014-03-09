@@ -1,11 +1,11 @@
 class ProfessionalsController < ApplicationController
 
-  before_action :set_professional, only: [:edit_profile, :edit_requirements, :update]
+  before_action :set_professional, only: [:edit_profile, :edit_requirement, :update]
 
   def edit_profile
   end
 
-  def edit_requirements
+  def edit_requirement
   end
 
   private
