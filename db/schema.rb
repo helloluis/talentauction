@@ -11,29 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140307080426) do
+ActiveRecord::Schema.define(version: 20140309104921) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "professional_profiles", force: true do |t|
-    t.integer "user_id"
-    t.string  "firstname"
-    t.string  "surname"
-    t.integer "professional_id"
+    t.integer  "user_id"
+    t.string   "firstname"
+    t.string   "surname"
+    t.integer  "professional_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "professional_profiles", ["professional_id"], name: "index_professional_profiles_on_professional_id", using: :btree
 
+  create_table "professional_requirements", force: true do |t|
+    t.float    "minimum_annual_salary"
+    t.string   "salary_currency"
+    t.text     "summary"
+    t.text     "ideal_job_summary"
+    t.text     "additional_info"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "recruiter_profiles", force: true do |t|
-    t.integer "recruiter_id"
-    t.string  "company_name"
-    t.string  "company_size"
-    t.string  "industry"
-    t.string  "country"
-    t.string  "city"
-    t.text    "summary"
-    t.text    "additional_info"
+    t.integer  "recruiter_id"
+    t.string   "company_name"
+    t.string   "company_size"
+    t.string   "industry"
+    t.string   "country"
+    t.string   "city"
+    t.text     "summary"
+    t.text     "additional_info"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "recruiter_profiles", ["recruiter_id"], name: "index_recruiter_profiles_on_recruiter_id", using: :btree

@@ -1,6 +1,7 @@
 class Professional < User
   has_one :profile, class_name: 'ProfessionalProfile', autosave: true
-  before_create :build_profile
+  has_one :professional_requirement, autosave: true
+  before_create :build_profile, :build_professional
 
   accepts_nested_attributes_for :profile
 end
