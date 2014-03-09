@@ -1,0 +1,30 @@
+.container
+  = form_for current_professional, html: {class: 'form-horizontal'} do |f|
+    = fields_for(:professional_requirements) do |req|
+      .row
+        .col-md-3
+          = req.label :minimum_annual_salary, class: 'control-label'
+        .col-md-6
+          = req.text_field :minimum_annual_salary, class: 'text'
+
+      .row
+        .col-md-3
+          = req.label :summary, t(:quick_description)
+        .col-md-6
+          = req.text_area :quick_description
+
+      .row
+        .col-md-3
+          = req.label :ideal_job_summary, t(:ideal_job_description)
+        .col-md-6
+          = req.text_area :ideal_job_summary
+
+      .row
+        .col-md-3
+          = req.label :additional_info, t(:additional_information)
+        .col-md-6
+          = req.text_area :additional_nfor
+
+    = link_to t(:go_back_to_profile), professional_edit_profile_path, class: 'btn btn-default'
+    = button_tag "Proceed To Next Step (WIP)",  class: 'btn btn-primary'
+
