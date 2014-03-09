@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140309104921) do
   add_index "professional_profiles", ["professional_id"], name: "index_professional_profiles_on_professional_id", using: :btree
 
   create_table "professional_requirements", force: true do |t|
+    t.integer  "professional_id"
     t.float    "minimum_annual_salary"
     t.string   "salary_currency"
     t.text     "summary"
@@ -36,6 +37,8 @@ ActiveRecord::Schema.define(version: 20140309104921) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "professional_requirements", ["professional_id"], name: "index_professional_requirements_on_professional_id", using: :btree
 
   create_table "recruiter_profiles", force: true do |t|
     t.integer  "recruiter_id"
