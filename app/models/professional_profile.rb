@@ -60,5 +60,7 @@ end
 #  firstname       :string(255)
 #  surname         :string(255)
 #  professional_id :integer
+#  created_at      :datetime
+#  updated_at      :datetime
 #
 

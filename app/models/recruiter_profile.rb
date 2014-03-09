@@ -15,5 +15,7 @@ end
 #  city            :string(255)
 #  summary         :text
 #  additional_info :text
+#  created_at      :datetime
+#  updated_at      :datetime
 #
 
