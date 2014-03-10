@@ -18,6 +18,10 @@ p {
   clear:both;
 } //.clear
 
+.center-block {
+  float:none;
+} //.center-block
+
 .navbar-brand {
   font-size:1rem;
 } //.navbar-brand
@@ -29,3 +33,21 @@ p {
   font-size:rem-calc(12px);
 
 } //#colophon
+
+//////////////////////////
+//      FORMS
+//////////////////////////
+
+input.text,
+textarea {
+  width:100%;
+  border:1px solid #CCC;
+}
+
+textarea {
+  height:200px;
+}
+
+.form-item {
+  margin-bottom:10px;
+}

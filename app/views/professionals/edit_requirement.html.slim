@@ -1,30 +1,56 @@
-.container
-  = form_for current_professional, html: {class: 'form-horizontal'} do |f|
+div class="container"
+  ul class="steps-list breadcrumb list-inline text-center"
+    li
+      = t(:profile)
+    li class="active"
+      = t(:job_requirements)
+    li
+      = t(:start_auction)
+
+  div class="text-center pull-right"
+    p class="btn-group"
+      = link_to "Linkedin", '#', :class => "btn btn-default active"
+      = link_to t(:remove_connection), '#', :class => "btn btn-default"
+
+  header class="basic_info pull-left"
+    h2
+      #{current_professional.profile.firstname} #{current_professional.profile.surname}
+      small
+        #{current_professional.profile.linkedin_url}
+
+    h3= t(:location)
+    p #{current_professional.profile.location}
+
+  hr class="clear"
+
+  = form_for current_professional, html: {class: 'form-horizontal col-md-9 center-block'} do |f|
     = fields_for(:professional_requirements) do |req|
-      .row
-        .col-md-3
+      div class="form-item"
+        div class="col-md-4"
           = req.label :minimum_annual_salary, class: 'control-label'
-        .col-md-6
+        div class="col-md-8 input-group"
+          span class="input-group-addon" PhP
           = req.text_field :minimum_annual_salary, class: 'text'
 
-      .row
-        .col-md-3
+      div class="form-item"
+        div class="col-md-4"
           = req.label :summary, t(:quick_description)
-        .col-md-6
+        div class="col-md-8 input-group"
           = req.text_area :quick_description
 
-      .row
-        .col-md-3
+      div class="form-item"
+        div class="col-md-4"
           = req.label :ideal_job_summary, t(:ideal_job_description)
-        .col-md-6
+        div class="col-md-8 input-group"
           = req.text_area :ideal_job_summary
 
-      .row
-        .col-md-3
+      div class="form-item"
+        div class="col-md-4"
           = req.label :additional_info, t(:additional_information)
-        .col-md-6
+        div class="col-md-8 input-group"
           = req.text_area :additional_nfor
 
-    = link_to t(:go_back_to_profile), professional_edit_profile_path, class: 'btn btn-default'
-    = button_tag "Proceed To Next Step (WIP)",  class: 'btn btn-primary'
+    div class="btn-container"
+      = link_to t(:go_back_to_profile), professional_edit_profile_path, class: 'btn btn-default'
+      = button_tag "Proceed To Next Step (WIP)",  class: 'btn btn-primary pull-right'
 
