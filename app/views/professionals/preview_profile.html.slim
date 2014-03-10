@@ -1,0 +1,37 @@
+.container
+  ul.steps-list.breadcrumb.list-inline.text-center
+    li
+      = t(:profile)
+    li.active
+      = t(:job_requirements)
+    li
+      = t(:start_auction)
+
+
+  .basic_info
+    h2
+      #{@professional.profile.firstname} #{current_professional.profile.surname}
+    small
+      #{@professional.requirement.summary}
+
+  hr
+
+  ul#professional_skills.list-inline
+    - @professional.profile.skills.each do |skill|
+      li class="skill-tag" = skill
+  p
+    #{@professional.requirement.ideal_job_summary}
+
+  h3= t(:work_experience)
+  ol id="professional_experiences"
+    - @professional.profile.experiences.each do |experience|
+      li.profession-item
+        p
+          #{experience[:position]}
+          #{experience[:description]}
+          #{experience[:duration]}
+
+  div class="btn-container"
+    = link_to t(:go_back_to_profile), professional_edit_profile_path, class: 'btn btn-default'
+    = link_to "Submit Your Profile (WIP", '#', class: 'btn btn-primary pull-right'
+

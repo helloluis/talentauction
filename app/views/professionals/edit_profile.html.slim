@@ -14,18 +14,18 @@ div class="container"
 
   header class="basic_info pull-left"
     h2
-      #{current_professional.profile.firstname} #{current_professional.profile.surname}
+      #{@professional.profile.firstname} #{@professional.profile.surname}
       small
-        #{current_professional.profile.linkedin_url}
+        #{@professional.profile.linkedin_url}
 
     h3= t(:location)
-    p #{current_professional.profile.location}
+    p #{@professional.profile.location}
 
   hr class="clear"
 
   h3= t(:education)
   ol id="professional_education"
-    - current_professional.profile.educations.each do |education|
+    - @professional.profile.educations.each do |education|
       li.education-item
         = education
 
@@ -33,7 +33,7 @@ div class="container"
 
   h3= t(:experience)
   ol id="professional_experiences"
-    - current_professional.profile.experiences.each do |experience|
+    - @professional.profile.experiences.each do |experience|
       li.profession-item
         p
           #{experience[:position]}
@@ -44,7 +44,7 @@ div class="container"
 
   h3= t(:skills_and_expertise)
   ul id="professional_skills" class="list-inline"
-    - current_professional.profile.skills.each do |skill|
+    - @professional.profile.skills.each do |skill|
       li class="skill-tag" = skill
 
   hr

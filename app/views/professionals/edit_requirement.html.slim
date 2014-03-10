@@ -23,8 +23,8 @@ div class="container"
 
   hr class="clear"
 
-  = form_for current_professional, html: {class: 'form-horizontal col-md-9 center-block'} do |f|
-    = fields_for(:professional_requirements) do |req|
+  = form_for @professional, html: {class: 'form-horizontal col-md-9 center-block'} do |f|
+    = f.fields_for(:requirement) do |req|
       div class="form-item"
         div class="col-md-4"
           = req.label :minimum_annual_salary, class: 'control-label'
@@ -36,7 +36,7 @@ div class="container"
         div class="col-md-4"
           = req.label :summary, t(:quick_description)
         div class="col-md-8 input-group"
-          = req.text_area :quick_description
+          = req.text_area :summary
 
       div class="form-item"
         div class="col-md-4"
@@ -48,9 +48,9 @@ div class="container"
         div class="col-md-4"
           = req.label :additional_info, t(:additional_information)
         div class="col-md-8 input-group"
-          = req.text_area :additional_nfor
+          = req.text_area :additional_info
 
     div class="btn-container"
       = link_to t(:go_back_to_profile), professional_edit_profile_path, class: 'btn btn-default'
-      = button_tag "Proceed To Next Step (WIP)",  class: 'btn btn-primary pull-right'
+      = f.submit "Proceed To Next Step",  class: 'btn btn-primary pull-right'
 

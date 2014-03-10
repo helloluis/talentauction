@@ -1,5 +1,5 @@
 class ProfessionalRequirement < ActiveRecord::Base
-  # belongs_to :professional, inverse_of: :professional_requirement
+  belongs_to :professional, inverse_of: :requirement
 end
 
 # == Schema Information

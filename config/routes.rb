@@ -7,6 +7,7 @@ Talentauction::Application.routes.draw do
   resources :professionals do
     get 'edit_profile'
     get 'edit_requirement'
+    get 'preview_profile'
   end
 
   resources :recruiters do
