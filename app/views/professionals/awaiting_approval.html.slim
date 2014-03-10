@@ -1,0 +1,17 @@
+.container
+  ul class="steps-list breadcrumb list-inline text-center"
+    li
+      = t(:profile)
+    li class="active"
+      = t(:job_requirements)
+    li
+      = t(:start_auction)
+
+  h2 Thank you!
+  p We'll review your application and get back to you via email within 24-48 hours. Once 
+    we've approved your profile, you can start your auction and begin receiving job offers 
+    from our growing database of interested businesses.
+
+  = render 'preview', professional: @professional
+
+

@@ -11,6 +11,9 @@ class ProfessionalsController < ApplicationController
   def preview_profile
   end
 
+  def awaiting_approval
+  end
+
   def update
     if @professional.update_attributes(professional_params)
       redirect_to professional_preview_profile_path(@professional)

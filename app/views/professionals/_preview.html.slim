@@ -1,0 +1,23 @@
+.container
+  .basic_info
+    h2
+      #{professional.profile.firstname} #{current_professional.profile.surname}
+    small
+      #{professional.requirement.summary}
+
+  hr
+
+  ul#professional_skills.list-inline
+    - professional.profile.skills.each do |skill|
+      li class="skill-tag" = skill
+  p
+    #{professional.requirement.ideal_job_summary}
+
+  h3= t(:work_experience)
+  ol id="professional_experiences"
+    - professional.profile.experiences.each do |experience|
+      li.profession-item
+        p
+          #{experience[:position]}
+          #{experience[:description]}
+          #{experience[:duration]}
