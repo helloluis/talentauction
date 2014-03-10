@@ -45,9 +45,11 @@ textarea {
 }
 
 textarea {
+  font-size:rem-calc(16px);
   height:200px;
 }
 
 .form-item {
   margin-bottom:10px;
+  @extend .clearfix;
 }
