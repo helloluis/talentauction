@@ -1,0 +1,78 @@
+.container
+  ul.something
+    li.active
+      = t(:profile)
+    li
+      = t(:job_requirements)
+    li
+      = t(:start_searching)
+
+  = form_for @recruiter, html: {class: 'form-horizontal'} do |f|
+    = f.fields_for(:profile) do |profile|
+      .row
+        .col-md-3
+          = profile.label :company_name, class: 'control-label'
+        .col-md-6
+          = profile.text_field :company_name, class: 'email col-md-9'
+      .row
+        .col-md-3
+          = profile.label :company_size, class: 'control-label'
+        .col-md-6
+          = profile.text_field :company_size, class: 'text col-md-9'
+      .row
+        .col-md-3
+          = profile.label :industry, class: 'control-label'
+        .col-md-6
+          = profile.text_field :industry, class: 'text col-md-9'
+      .row
+        .col-md-3
+          = profile.label :country, class: 'control-label'
+        .col-md-6
+          = profile.text_field :country, class: 'text col-md-9'
+      .row
+        .col-md-3
+          = profile.label :city, class: 'control-label'
+        .col-md-6
+          = profile.text_field :city, class: 'text col-md-9'
+
+      .row
+        .col-md-3
+          = profile.label :summary, class: 'control-label'
+        .col-md-6
+          = profile.text_area :summary, class: 'text col-md-9'
+      .row
+        .col-md-3
+          = profile.label :additional_info, class: 'control-label'
+        .col-md-6
+          = profile.text_area :additional_info, class: 'text col-md-9'
+
+      p
+        Please provide us with your credit card information. You will only be charged
+        if an employee is successfully hired. For more information about this process,
+        please refer to our terms of service and FAQ.
+
+    .row
+      .col-md-3
+        = label_tag :credit_card_holder
+      .col-md-6
+        = text_field_tag :credit_card_holder, 'Janette Naples', class: 'text col-md-12', disabled: true
+    .row
+      .col-md-3
+        = label_tag :credit_card_number
+      .col-md-6
+        = text_field_tag :credit_card_number, 'XXXX-XXXX-XXXX-XXXX', class: 'text col-md-12',  disabled: true
+    .row
+      .col-md-3
+        = label_tag :cvc
+      .col-md-3
+        = text_field_tag :cvc, 'XXX', disabled: true
+      .col-md-1
+        = label_tag :expiry
+      .col-md-1
+        = text_field_tag :expiry_month, '01', disabled: true,  class: 'text'
+      .col-md-1
+        = text_field_tag :expiry_year, '15', disabled: true, class: 'text'
+
+  .row
+    = button_tag t(:proceed_to_next_step), class: 'btn btn-primary'
+

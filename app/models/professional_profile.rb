@@ -1,5 +1,5 @@
 class ProfessionalProfile < ActiveRecord::Base
-  belongs_to :professional, inverse_of: :professional_profile
+  belongs_to :professional, inverse_of: :profile
 
   def firstname
     'Leeroy'
@@ -50,3 +50,17 @@ class ProfessionalProfile < ActiveRecord::Base
     'Mobile Application', 'Start-ups']
   end
 end
+
+# == Schema Information
+#
+# Table name: professional_profiles
+#
+#  id              :integer          not null, primary key
+#  user_id         :integer
+#  firstname       :string(255)
+#  surname         :string(255)
+#  professional_id :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+

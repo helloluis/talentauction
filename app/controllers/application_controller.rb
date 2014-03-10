@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     if resource.is_a? Professional
       professional_edit_profile_path(resource)
     elsif resource.is_a? Recruiter
-      edit_recruiter_registration_path
+      recruiter_edit_profile_path(resource)
     end
   end
 end

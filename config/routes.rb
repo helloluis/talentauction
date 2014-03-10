@@ -6,6 +6,12 @@ Talentauction::Application.routes.draw do
 
   resources :professionals do
     get 'edit_profile'
+    get 'edit_requirement'
+  end
+
+  resources :recruiters do
+    get 'edit_profile'
+    get 'edit_requirement'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

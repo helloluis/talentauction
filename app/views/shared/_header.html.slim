@@ -21,4 +21,7 @@ nav class="navbar navbar-default" role="navigation"
         li class="contact"
           = link_to "Contact us", ""
         li class="user-account"
-          = link_to "Sign in", ""
+          - if recruiter_signed_in? or professional_signed_in?
+            = link_to "Sign out", destroy_user_session_path, method: :delete
+          - else
+            = link_to "Sign in", root_path
