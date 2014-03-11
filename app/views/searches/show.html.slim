@@ -1,0 +1,58 @@
+.container
+  = render 'recruiters/shared/breadcrumb', active: "start_searching"
+
+  h3 View all Auctions Matching
+
+  .row
+    .col-md-6
+      ul#job_requirements.list-inline
+        li.skill-tag Ruby on Rails
+        li.skill-tag iOS
+        li.skill-tag UX Design
+        li.skill-tag E-Sports
+
+      p
+        =link_to "Add more keywords...", '#'
+    .col-md-6.text-right
+      | 3 Auctions found
+      p Try adding more keywords for more results...
+
+  .row
+    .col-md-12
+      ol#search_results
+        li
+          | Luis Buenaventura
+          p Designer/developer/entrepreneur looking for strange new adventures
+
+          span.badge 3
+          | Offers
+
+          span.badge 2
+          | Questions
+
+          = link_to t(:add_to_favorites), '#', class: 'btn btn-default'
+
+        li
+          | Marco Palinar
+          p Running on empty
+
+          span.badge 1
+          | Offers
+
+          span.badge 2
+          | Questions
+
+          = link_to t(:add_to_favorites), '#', class: 'btn btn-default'
+
+
+        li
+          | Mae Paulini
+          p Making tees
+
+          span.badge 4
+          | Offers
+
+          span.badge 8
+          | Questions
+
+          = link_to t(:add_to_favorites), '#', class: 'btn btn-default'

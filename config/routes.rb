@@ -4,6 +4,7 @@ Talentauction::Application.routes.draw do
   devise_for :professionals
   devise_for :recruiters
 
+  resource :search
   resources :professionals do
     get 'edit_profile'
     get 'edit_requirement'

@@ -10,7 +10,7 @@
       .col-md-6
         = text_field_tag :skills, '', class: 'text col-md-12'
       .col-md-3
-        = link_to "Add to Watchlist", '#', class: 'btn btn-default'
+        = link_to "Add to Watchlist (WIP)", '#', class: 'btn btn-default'
 
     hr
 
@@ -21,3 +21,5 @@
       li.skill-tag iOS
       li.skill-tag UX Design
       li.skill-tag E-Sports
+
+    = link_to t(:start_searching), search_path, class: 'btn btn-primary'
