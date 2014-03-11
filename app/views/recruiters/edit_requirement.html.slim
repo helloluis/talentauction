@@ -1,0 +1,23 @@
+.container
+  = render 'recruiters/shared/breadcrumb', active: 'requirements'
+
+  p Add keywords that describe the kind of skillsets that you're looking for, e.g.
+    "PHP", "CTO", "UX Design" etc. Whenever an auction is created that matches any of
+    these keywords, we'll inform you via email.
+
+  = form_for @recruiter, html: {class: 'form-horizontal'} do |f|
+    .row
+      .col-md-6
+        = text_field_tag :skills, '', class: 'text col-md-12'
+      .col-md-3
+        = link_to "Add to Watchlist", '#', class: 'btn btn-default'
+
+    hr
+
+    h3 Your Watchlist
+
+    ul#job_requirements.list-inline
+      li.skill-tag Ruby on Rails
+      li.skill-tag iOS
+      li.skill-tag UX Design
+      li.skill-tag E-Sports

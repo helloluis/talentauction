@@ -67,6 +67,6 @@
       .col-md-1
         = text_field_tag :expiry_year, '15', disabled: true, class: 'text'
 
-  .row
-    = button_tag t(:proceed_to_next_step), class: 'btn btn-primary'
+    .row
+      = f.submit "Proceed to next step",  class: 'btn btn-primary'
 
