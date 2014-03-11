@@ -1,11 +1,5 @@
 div class="container"
-  ul class="steps-list breadcrumb list-inline text-center"
-    li
-      = t(:profile)
-    li class="active"
-      = t(:job_requirements)
-    li
-      = t(:start_auction)
+  = render 'professionals/shared/breadcrumb', active: 'job_requirements'
 
   div class="text-center pull-right"
     p class="btn-group"

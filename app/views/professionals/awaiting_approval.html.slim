@@ -1,11 +1,5 @@
 .container
-  ul class="steps-list breadcrumb list-inline text-center"
-    li
-      = t(:profile)
-    li class="active"
-      = t(:job_requirements)
-    li
-      = t(:start_auction)
+  = render 'professionals/shared/breadcrumb', active: 'job_requirements'
 
   h2 Thank you!
   p We'll review your application and get back to you via email within 24-48 hours. Once 

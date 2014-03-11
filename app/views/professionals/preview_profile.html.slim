@@ -1,12 +1,5 @@
 .container
-  ul.steps-list.breadcrumb.list-inline.text-center
-    li
-      = t(:profile)
-    li.active
-      = t(:job_requirements)
-    li
-      = t(:start_auction)
-
+  = render 'professionals/shared/breadcrumb', active: 'job_requirements'
 
   = render 'preview', professional: @professional
 
