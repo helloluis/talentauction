@@ -1,11 +1,5 @@
 .container
-  ul.something
-    li.active
-      = t(:profile)
-    li
-      = t(:job_requirements)
-    li
-      = t(:start_searching)
+  = render 'recruiters/shared/breadcrumb', active: 'company_profile'
 
   = form_for @recruiter, html: {class: 'form-horizontal'} do |f|
     = f.fields_for(:profile) do |profile|
