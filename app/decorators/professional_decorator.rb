@@ -10,7 +10,7 @@ class ProfessionalDecorator < Draper::Decorator
   #     end
   #   end
 
-  def full_name
+  def fullname
     [profile.firstname, profile.surname].join(' ')
   end
 

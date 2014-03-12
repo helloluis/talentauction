@@ -13,10 +13,24 @@ div class="container"
 
   div class="col-md-10 col-md-offset-1"
     h2
-      | 3 Auctions found
+      | #{3 + @professionals.count} Auctions found
       small Try adding more keywords for more results
 
     ol id="search-results" class="list-inline"
+      - @professionals.each do |professional|
+        li
+          div class="clearfix search-item"
+            div class="col-md-8"
+              h3= link_to professional.fullname, professional
+              p= professional.requirement_ideal_job_summary
+
+            div class="col-md-4 text-right"
+              p class="stats-wrapper"
+                span class="offers-wrapper badge" 3 Offers
+                |
+                span class="questions-wrapper badge" 2 Questions
+
+              = link_to t(:add_to_favorites), '#', class: 'btn btn-primary'
       li
         div class="clearfix search-item"
           div class="col-md-8"
