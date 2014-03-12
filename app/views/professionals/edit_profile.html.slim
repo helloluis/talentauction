@@ -1,10 +1,7 @@
 div class="container"
   = render 'professionals/shared/breadcrumb', active: 'profile'
 
-  div class="text-center pull-right"
-    p class="btn-group"
-      = link_to "Linkedin", '#', :class => "btn btn-default active"
-      = link_to t(:remove_connection), '#', :class => "btn btn-default"
+  = render :partial => "professionals/shared/linkedin"
 
   header class="basic_info pull-left"
     h2
@@ -28,11 +25,13 @@ div class="container"
   h3= t(:experience)
   ol id="professional_experiences"
     - @professional.profile.experiences.each do |experience|
-      li.profession-item
-        p
+      li class="profession-item"
+        h4 class="experience-position"
           #{experience[:position]}
+        p
           #{experience[:description]}
-          #{experience[:duration]}
+          small
+            #{experience[:duration]}
 
   hr
 
@@ -44,7 +43,7 @@ div class="container"
   hr
 
   p class="text-center"
-    = link_to t(:proceed_to_next_step), professional_edit_requirement_path, :class => "btn btn-large"
+    = link_to t(:proceed_to_next_step), professional_edit_requirement_path, :class => "btn btn-primary btn-large"
 
   footer class="text-center"
     p
@@ -52,6 +51,6 @@ div class="container"
         | additionally, you may also sign in with these other services so we can add more details to your profile.
 
     ul class="something list-inline"
-      li = link_to t(:sign_in_with_github), '#', :class => "btn"
-      li = link_to t(:sign_in_with_dribbble), '#', :class => "btn"
-      li = link_to t(:sign_in_with_behance), '#', :class => "btn"
+      li = link_to t(:sign_in_with_github), '#', :class => "btn btn-primary"
+      li = link_to t(:sign_in_with_dribbble), '#', :class => "btn btn-primary"
+      li = link_to t(:sign_in_with_behance), '#', :class => "btn btn-primary"

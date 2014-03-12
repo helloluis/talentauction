@@ -1,25 +1,26 @@
-.container
+div class="container"
   = render 'recruiters/shared/breadcrumb', active: 'requirements'
 
-  p Add keywords that describe the kind of skillsets that you're looking for, e.g.
-    "PHP", "CTO", "UX Design" etc. Whenever an auction is created that matches any of
-    these keywords, we'll inform you via email.
+  div class="well well-lg clearfix"
+    p Add keywords that describe the kind of skillsets that you're looking for, e.g.
+      "PHP", "CTO", "UX Design" etc. Whenever an auction is created that matches any of
+      these keywords, we'll inform you via email.
 
-  = form_for @recruiter, html: {class: 'form-horizontal'} do |f|
-    .row
-      .col-md-6
-        = text_field_tag :skills, '', class: 'text col-md-12'
-      .col-md-3
-        = link_to "Add to Watchlist (WIP)", '#', class: 'btn btn-default'
+    = form_for @recruiter, html: {class: 'form-horizontal'} do |f|
+      div class="clearfix col-md-8 col-md-offset-2"
+        div class="col-md-8"
+          = text_field_tag :skills, '', class: 'text col-md-12'
+        div class="col-md-4"
+          = link_to "Add to Watchlist (WIP)", '#', class: 'btn btn-primary'
 
-    hr
+  hr
 
-    h3 Your Watchlist
+  h3 Your Watchlist
 
-    ul#job_requirements.list-inline
-      li.skill-tag Ruby on Rails
-      li.skill-tag iOS
-      li.skill-tag UX Design
-      li.skill-tag E-Sports
+  ul id="job_requirements" class="list-inline"
+    li class="skill-tag" Ruby on Rails
+    li class="skill-tag" iOS
+    li class="skill-tag" UX Design
+    li class="skill-tag" E-Sports
 
-    = link_to t(:start_searching), search_path, class: 'btn btn-primary'
+  = link_to t(:start_searching), search_path, class: 'btn btn-primary'

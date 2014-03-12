@@ -1,58 +1,60 @@
-.container
+div class="container"
   = render 'recruiters/shared/breadcrumb', active: "start_searching"
+  
+  header class="well search-header"
+    h2 class="inline" All Auctions Matching:
 
-  h3 View all Auctions Matching
+    ul id="job_requirements" class="list-inline"
+      li class="skill-tag" Ruby on Rails
+      li class="skill-tag" iOS
+      li class="skill-tag" UX Design
+      li class="skill-tag" E-Sports
+      li =link_to "Add more keywords...", '#'
 
-  .row
-    .col-md-6
-      ul#job_requirements.list-inline
-        li.skill-tag Ruby on Rails
-        li.skill-tag iOS
-        li.skill-tag UX Design
-        li.skill-tag E-Sports
+  div class="col-md-10 col-md-offset-1"
+    h2
+      | 3 Auctions found 
+      small Try adding more keywords for more results
 
-      p
-        =link_to "Add more keywords...", '#'
-    .col-md-6.text-right
-      | 3 Auctions found
-      p Try adding more keywords for more results...
+    ol id="search-results" class="list-inline"
+      li 
+        div class="clearfix search-item"
+          div class="col-md-8"
+            h3 Luis Buenaventura
+            p Designer/developer/entrepreneur looking for strange new adventures
 
-  .row
-    .col-md-12
-      ol#search_results
-        li
-          | Luis Buenaventura
-          p Designer/developer/entrepreneur looking for strange new adventures
+          div class="col-md-4 text-right"
+            p class="stats-wrapper"
+              span class="offers-wrapper badge" 3 Offers
+              |  
+              span class="questions-wrapper badge" 2 Questions
 
-          span.badge 3
-          | Offers
+            = link_to t(:add_to_favorites), '#', class: 'btn btn-primary'
 
-          span.badge 2
-          | Questions
+      li
+        div class="clearfix search-item"
+          div class="col-md-8"
+            h3 Marco Palinar
+            p Running on empty
 
-          = link_to t(:add_to_favorites), '#', class: 'btn btn-default'
+          div class="col-md-4 text-right"
+            p class="stats-wrapper"
+              span class="offers-wrapper badge" 3 Offers
+              |  
+              span class="questions-wrapper badge" 2 Questions
 
-        li
-          | Marco Palinar
-          p Running on empty
+            = link_to t(:add_to_favorites), '#', class: 'btn btn-primary'
 
-          span.badge 1
-          | Offers
+      li
+        div class="clearfix search-item"
+          div class="col-md-8"
+            h3 Mae Paulino
+            p Making tees
 
-          span.badge 2
-          | Questions
+          div class="col-md-4 text-right"
+            p class="stats-wrapper"
+              span class="offers-wrapper badge" 3 Offers
+              |  
+              span class="questions-wrapper badge" 2 Questions
 
-          = link_to t(:add_to_favorites), '#', class: 'btn btn-default'
-
-
-        li
-          | Mae Paulini
-          p Making tees
-
-          span.badge 4
-          | Offers
-
-          span.badge 8
-          | Questions
-
-          = link_to t(:add_to_favorites), '#', class: 'btn btn-default'
+            = link_to t(:add_to_favorites), '#', class: 'btn btn-primary'

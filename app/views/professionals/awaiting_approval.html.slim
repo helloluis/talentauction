@@ -1,10 +1,11 @@
-.container
+div class="container"
   = render 'professionals/shared/breadcrumb', active: 'job_requirements'
 
-  h2 Thank you!
-  p We'll review your application and get back to you via email within 24-48 hours. Once 
-    we've approved your profile, you can start your auction and begin receiving job offers 
-    from our growing database of interested businesses.
+  div class="alert alert-success"
+    h2 Thank you!
+    p We'll review your application and get back to you via email within 24-48 hours. Once 
+      we've approved your profile, you can start your auction and begin receiving job offers 
+      from our growing database of interested businesses.
 
   = render 'preview', professional: @professional
 

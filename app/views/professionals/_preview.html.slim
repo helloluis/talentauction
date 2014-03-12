@@ -1,5 +1,5 @@
-.container
-  .basic_info
+div class="container"
+  div class="basic_info"
     h2
       #{professional.profile.firstname} #{current_professional.profile.surname}
     small
@@ -7,17 +7,21 @@
 
   hr
 
-  ul#professional_skills.list-inline
+  ul id="professional_skills" class="list-inline"
     - professional.profile.skills.each do |skill|
       li class="skill-tag" = skill
-  p
-    #{professional.requirement.ideal_job_summary}
 
-  h3= t(:work_experience)
-  ol id="professional_experiences"
-    - professional.profile.experiences.each do |experience|
-      li.profession-item
-        p
-          #{experience[:position]}
-          #{experience[:description]}
-          #{experience[:duration]}
+  div class="col-md-10 col-md-offset-1"
+    p
+      #{professional.requirement.ideal_job_summary}
+
+    h3= t(:work_experience)
+    ol id="professional_experiences"
+      - professional.profile.experiences.each do |experience|
+        li class="profession-item"
+          h4 class="experience-position"
+            #{experience[:position]}
+          p
+            #{experience[:description]}
+            small
+              #{experience[:duration]}

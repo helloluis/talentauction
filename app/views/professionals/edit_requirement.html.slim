@@ -1,10 +1,7 @@
 div class="container"
   = render 'professionals/shared/breadcrumb', active: 'job_requirements'
 
-  div class="text-center pull-right"
-    p class="btn-group"
-      = link_to "Linkedin", '#', :class => "btn btn-default active"
-      = link_to t(:remove_connection), '#', :class => "btn btn-default"
+  = render :partial => "professionals/shared/linkedin"
 
   header class="basic_info pull-left"
     h2

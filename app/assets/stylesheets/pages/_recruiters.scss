@@ -1,0 +1,33 @@
+.cvc-fields label {
+  margin-left:-15px;
+  padding-left:30px;
+} //.cvc-fields label
+
+.expiry-dates {
+  padding-right:0;
+
+  input {
+    width:47.5%;
+    margin-right:5%;
+
+    &:last-child {
+      margin-right:0;
+    }
+  } //.expiry-fields input
+
+} //.expiry-fields
+
+#search-results li {
+  padding:0 0 15px;
+  @extend .clearfix;
+  width:100%;
+  display:block;
+
+  .search-item {
+    border-bottom:1px solid #CCC;
+  }
+
+  h3 {
+    margin-top:0;
+  }
+} //#search-results

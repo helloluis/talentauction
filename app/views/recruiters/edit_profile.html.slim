@@ -1,72 +1,61 @@
 .container
   = render 'recruiters/shared/breadcrumb', active: 'company_profile'
 
-  = form_for @recruiter, html: {class: 'form-horizontal'} do |f|
+  = form_for @recruiter, html: {class: 'form-horizontal col-md-8 col-md-offset-1'} do |f|
     = f.fields_for(:profile) do |profile|
-      .row
-        .col-md-3
-          = profile.label :company_name, class: 'control-label'
-        .col-md-6
-          = profile.text_field :company_name, class: 'email col-md-9'
-      .row
-        .col-md-3
-          = profile.label :company_size, class: 'control-label'
-        .col-md-6
-          = profile.text_field :company_size, class: 'text col-md-9'
-      .row
-        .col-md-3
-          = profile.label :industry, class: 'control-label'
-        .col-md-6
-          = profile.text_field :industry, class: 'text col-md-9'
-      .row
-        .col-md-3
-          = profile.label :country, class: 'control-label'
-        .col-md-6
-          = profile.text_field :country, class: 'text col-md-9'
-      .row
-        .col-md-3
-          = profile.label :city, class: 'control-label'
-        .col-md-6
-          = profile.text_field :city, class: 'text col-md-9'
+      div class="form-item"
+        = profile.label :company_name, class: 'control-label col-md-4'
+        div class="col-md-8 input-group"
+          = profile.text_field :company_name, class: 'email text'
+      div class="form-item"
+        = profile.label :company_size, class: 'control-label col-md-4'
+        div class="col-md-8 input-group"
+          = profile.text_field :company_size, class: 'text'
+      div class="form-item"
+        = profile.label :industry, class: 'control-label col-md-4'
+        div class="col-md-8 input-group"
+          = profile.text_field :industry, class: 'text'
+      div class="form-item"
+        = profile.label :country, class: 'control-label col-md-4'
+        div class="col-md-8 input-group"
+          = profile.text_field :country, class: 'text'
+      div class="form-item"
+        = profile.label :city, class: 'control-label col-md-4'
+        div class="col-md-8 input-group"
+          = profile.text_field :city, class: 'text'
 
-      .row
-        .col-md-3
-          = profile.label :summary, class: 'control-label'
-        .col-md-6
-          = profile.text_area :summary, class: 'text col-md-9'
-      .row
-        .col-md-3
-          = profile.label :additional_info, class: 'control-label'
-        .col-md-6
-          = profile.text_area :additional_info, class: 'text col-md-9'
+      div class="form-item"
+        = profile.label :summary, class: 'control-label col-md-4'
+        div class="col-md-8 input-group"
+          = profile.text_area :summary, class: 'text'
+      div class="form-item"
+        = profile.label :additional_info, class: 'control-label col-md-4'
+        div class="col-md-8 input-group"
+          = profile.text_area :additional_info, class: 'text'
 
-      p
+      p class="col-md-offset-4 col-md-8"
         Please provide us with your credit card information. You will only be charged
         if an employee is successfully hired. For more information about this process,
         please refer to our terms of service and FAQ.
 
-    .row
-      .col-md-3
-        = label_tag :credit_card_holder
-      .col-md-6
+    div class="form-item"
+      = label_tag :credit_card_holder, t(:credit_card_holder), :class => "control-label col-md-4"
+      div class="col-md-8 input-group"
         = text_field_tag :credit_card_holder, 'Janette Naples', class: 'text col-md-12', disabled: true
-    .row
-      .col-md-3
-        = label_tag :credit_card_number
-      .col-md-6
-        = text_field_tag :credit_card_number, 'XXXX-XXXX-XXXX-XXXX', class: 'text col-md-12',  disabled: true
-    .row
-      .col-md-3
-        = label_tag :cvc
-      .col-md-3
-        = text_field_tag :cvc, 'XXX', disabled: true
-      .col-md-1
-        = label_tag :expiry
-      .col-md-1
-        = text_field_tag :expiry_month, '01', disabled: true,  class: 'text'
-      .col-md-1
-        = text_field_tag :expiry_year, '15', disabled: true, class: 'text'
+    div class="form-item"
+      = label_tag :credit_card_number, t(:credit_card_number), class: "control-label col-md-4"
+      div class="col-md-8 input-group"
+        = text_field_tag :credit_card_number, 'XXXX-XXXX-XXXX-XXXX', class: 'text col-md-12',  disabled: true, type: "number"
+    div class="form-item clearfix"
+      div class="col-md-8 row cvc-fields"
+        = label_tag :cvc, t(:cvc), class: "control-label col-md-7"
+        div class="col-md-5 input-group"
+          = text_field_tag :cvc, 'XXX', disabled: true, class: "text", type: "number"
+      div class="col-md-5 row expiry-fields"
+        = label_tag :expiry, t(:expiry), class: "control-label col-md-5"
+        div class="col-md-7 expiry-dates"
+          = text_field_tag :expiry_month, '01', disabled: true,  class: 'text'
+          = text_field_tag :expiry_year, '15', disabled: true, class: 'text'
 
-    .row
-      = f.submit "Proceed to next step",  class: 'btn btn-primary'
-
+    div class="button-container clearfix"
+      = f.submit "Proceed to next step",  class: 'btn btn-primary btn-lg pull-right'

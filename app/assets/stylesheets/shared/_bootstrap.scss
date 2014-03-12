@@ -25,8 +25,8 @@ $grid-float-breakpoint: 991px;
 @import "bootstrap/navs";
 @import "bootstrap/navbar";
 @import "bootstrap/breadcrumbs";
-@import "bootstrap/pagination";
-@import "bootstrap/pager";
+//@import "bootstrap/pagination";
+//@import "bootstrap/pager";
 @import "bootstrap/labels";
 @import "bootstrap/badges";
 @import "bootstrap/jumbotron";
@@ -35,8 +35,8 @@ $grid-float-breakpoint: 991px;
 //@import "bootstrap/progress-bars";
 //@import "bootstrap/media";
 //@import "bootstrap/list-group";
-@import "bootstrap/panels";
-//@import "bootstrap/wells";
+//@import "bootstrap/panels";
+@import "bootstrap/wells";
 @import "bootstrap/close";
 
 // Components w/ JavaScript

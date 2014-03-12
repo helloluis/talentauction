@@ -14,7 +14,7 @@
         div class='checkbox'
           = f.check_box :remember_me, type: 'checkbox'
           = f.label :remember_me
-        = f.submit "Sign in", class: 'btn btn-default'
+        = f.submit "Sign in", class: 'btn btn-primary'
         - unless controller_name == 'sessions'
           = link_to "Cancel", "#", class: "cancel close"
 

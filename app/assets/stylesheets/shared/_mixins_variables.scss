@@ -1,5 +1,5 @@
 //typography
-$main-font-size: 21px;
+$main-font-size: 18px;
 
 @function rem-calc($value) {
   @return #{$value/$main-font-size}rem;
