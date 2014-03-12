@@ -1,0 +1,10 @@
+.container
+  .row
+    .col-md-8
+      = render 'professionals/preview', professional: @professional
+    .col-md-4
+      p
+        h3 AUCTION ENDS IN
+        = render 'professionals/shared/auction_summary', professional: @professional
+
+

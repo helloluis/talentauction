@@ -4,6 +4,9 @@ class Professional < User
   before_create :build_profile, :build_requirement
 
   accepts_nested_attributes_for :profile, :requirement
+
+  delegate :summary, to: :requirement, prefix: true, allow_nil: true
+  delegate :ideal_job_summary, to: :requirement, prefix: true, allow_nil: true
 end
 
 # == Schema Information

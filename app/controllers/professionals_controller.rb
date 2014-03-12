@@ -1,6 +1,10 @@
 class ProfessionalsController < ApplicationController
 
-  before_action :set_professional
+  before_action :set_professional_from_session, except: [:show]
+
+  def show
+    @professional = Professional.find(params[:id]).decorate
+  end
 
   def edit_profile
   end
@@ -32,7 +36,7 @@ class ProfessionalsController < ApplicationController
                                  :additional_info] )
   end
 
-  def set_professional
+  def set_professional_from_session
     @professional = current_professional
   end
 end

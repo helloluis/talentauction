@@ -25,3 +25,31 @@ div class="container"
             #{experience[:description]}
             small
               #{experience[:duration]}
+
+hr class="clear"
+
+h3= t(:education)
+ol id="professional_education"
+  - @professional.profile.educations.each do |education|
+    li.education-item
+      = education
+
+hr
+
+h3= t(:location)
+p #{@professional.profile.location}
+
+h3 Questions & Answers
+
+blockquote
+  p Do you play anything other than Pokemon?
+
+  footer From AnonymousGamingCompany from Singapore 5 days ago
+
+
+p Pokemon is not a game! they are real!
+
+h4 Got a question for #{professional.profile.firstname}?
+
+= text_area_tag :question, '', class: 'text-area'
+= submit_tag "Submit a Question", class: 'btn btn-primary'
