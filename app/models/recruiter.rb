@@ -27,5 +27,7 @@ end
 #  created_at             :datetime
 #  updated_at             :datetime
 #  type                   :string(255)
+#  provider               :string(255)
+#  uid                    :string(255)
 #
 

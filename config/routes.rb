@@ -1,7 +1,7 @@
 Talentauction::Application.routes.draw do
   # Devise routes
   devise_for :users
-  devise_for :professionals
+  devise_for :professionals, :controllers => { :omniauth_callbacks => "professionals/omniauth_callbacks" }, path: 'professionals/omniauth_callbacks/github'
   devise_for :recruiters
 
   resource :search

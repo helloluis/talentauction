@@ -2,11 +2,7 @@ class ProfessionalProfile < ActiveRecord::Base
   belongs_to :professional, inverse_of: :profile
 
   def firstname
-    'Leeroy'
-  end
-
-  def surname
-    'Buenaventura'
+    super || "Placeholder"
   end
 
   def linkedin_url

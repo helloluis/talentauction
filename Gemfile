@@ -36,6 +36,7 @@ gem 'activerecord-session_store'
 gem 'letter_opener'
 
 gem 'devise'
+gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 

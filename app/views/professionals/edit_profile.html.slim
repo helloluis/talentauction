@@ -51,6 +51,6 @@ div class="container"
         | additionally, you may also sign in with these other services so we can add more details to your profile.
 
     ul class="something list-inline"
-      li = link_to t(:sign_in_with_github), '#', :class => "btn btn-primary"
+      li = link_to t(:sign_in_with_github), professional_omniauth_authorize_path(:github), :class => "btn btn-primary"
       li = link_to t(:sign_in_with_dribbble), '#', :class => "btn btn-primary"
       li = link_to t(:sign_in_with_behance), '#', :class => "btn btn-primary"
