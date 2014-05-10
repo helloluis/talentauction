@@ -1,5 +1,5 @@
 class Professional < User
-  devise :omniauthable, :omniauth_providers => [:github]
+  devise :omniauthable, :omniauth_providers => [:github, :linkedin]
 
   has_one :profile, class_name: 'ProfessionalProfile', autosave: true
   has_one :requirement, class_name: 'ProfessionalRequirement', autosave: true
@@ -9,6 +9,26 @@ class Professional < User
 
   delegate :summary, to: :requirement, prefix: true, allow_nil: true
   delegate :ideal_job_summary, to: :requirement, prefix: true, allow_nil: true
+
+  def self.find_for_linkedin_oauth(auth)
+    professional = where(auth.slice(:provider, :uid)).first
+
+    if professional.nil?
+      professional = Professional.new
+      professional.provider = auth.provider
+      professional.uid = auth.uid
+      professional.email = auth.info.email
+      professional.password = Devise.friendly_token[0,20]
+
+      # NOTE : entire github name becomes first name. How do we handle this?
+      professional.build_profile
+      professional.profile.firstname = auth.info.name
+      # professional.image = auth.info.image # assuming the professional model has an image
+
+      professional.save
+    end
+    professional
+  end
 
   def self.find_for_github_oauth(auth)
     professional = where(auth.slice(:provider, :uid)).first

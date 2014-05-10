@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  listed_specs: 
+  actual_specs: 
+  itemcode: MyString
+  installed_at: 2014-05-10
+  replaced_at: 2014-05-10
+  failure_mode: 2014-05-10
+
+two:
+  description: MyText
+  listed_specs: 
+  actual_specs: 
+  itemcode: MyString
+  installed_at: 2014-05-10
+  replaced_at: 2014-05-10
+  failure_mode: 2014-05-10

@@ -37,6 +37,7 @@ gem 'letter_opener'
 
 gem 'devise'
 gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
+gem 'omniauth-linkedin-oauth2'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 

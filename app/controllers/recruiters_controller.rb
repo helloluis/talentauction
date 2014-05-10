@@ -13,7 +13,7 @@ class RecruitersController < ApplicationController
   end
 
   def edit_requirement
-    
+
   end
 
   private

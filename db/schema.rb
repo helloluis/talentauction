@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140314063145) do
+ActiveRecord::Schema.define(version: 20140510115712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
+
+  create_table "equipment", force: true do |t|
+    t.text     "description"
+    t.hstore   "listed_specs"
+    t.hstore   "actual_specs"
+    t.string   "itemcode"
+    t.date     "installed_at"
+    t.date     "replaced_at"
+    t.date     "failure_mode"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "equipment", ["itemcode"], name: "index_equipment_on_itemcode", using: :btree
 
   create_table "professional_profiles", force: true do |t|
     t.integer  "user_id"
